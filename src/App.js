@@ -1,12 +1,25 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import { Route, HashRouter, Switch } from "react-router-dom";
+import firebase from "firebase";
+import { initialize, signIn } from "./firebase-codes";
 import Landing from "./Components/Landing";
+initialize();
 function App() {
+	const [auth, updateAuth] = useState(false);
+	useEffect(() => {
+		const uns = firebase.auth().onAuthStateChanged((user) => {
+			updateAuth(!!user);
+		});
+		return () => {
+			uns();
+		};
+	}, []);
 	return (
 		<HashRouter basename='/' className='App'>
 			<Switch>
 				<Route path='/' exact>
-					<Landing />
+					<Landing signIn={signIn} auth={auth} />
 				</Route>
 				{/* <Route path='/register'>
 					<Register />

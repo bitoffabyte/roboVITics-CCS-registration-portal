@@ -45,6 +45,13 @@
 	background-color: #0093ff;
 	border-radius: 20.1913px;
 	line-height: 20px;
+	transition: all 500ms;
+	cursor: pointer;
+}
+.signinBtn:hover {
+	/* background-color: #0095ffab; */
+	filter: brightness(1.25);
+	transition: all 500ms;
 }
 .signinBtn span {
 	width: 70%;
@@ -83,4 +90,66 @@
 	/* margin-top: 10%; */
 	position: absolute;
 	bottom: 18%;
+}
+button {
+	outline: none;
+}
+@media only screen and (max-width: 801px) {
+	.landing {
+		flex-direction: column;
+	}
+	.ccs {
+		display: none;
+	}
+	.right,
+	.left {
+		height: auto;
+		width: 90%;
+		text-align: center;
+		margin: auto;
+	}
+	.lab {
+		transform: translate(0%, 0%);
+		text-align: center;
+		justify-content: center;
+		margin: auto;
+	}
+	.roboLogo {
+		width: 80vw;
+		height: auto;
+		margin: auto;
+	}
+	.signinBtn {
+		width: 70%;
+		font-size: 5vw;
+		margin: auto;
+		padding: 0.5vh 0.1vw;
+	}
+	.signinBtn img {
+		width: 15%;
+	}
+	.vitE {
+		width: 70%;
+		text-align: center;
+		margin: auto;
+		font-size: 4vw;
+	}
+	.rab {
+		transform: translate(0%, 0%);
+		text-align: center;
+		justify-content: center;
+		margin: auto;
+	}
+	.foto {
+		width: 80vw;
+		height: auto;
+		margin: auto;
+		position: relative;
+		left: 50%;
+		transform: translate(-55%);
+		margin-top: 20%;
+	}
+	.left {
+		margin-top: 40%;
+	}
 }
