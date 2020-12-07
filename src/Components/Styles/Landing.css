@@ -115,7 +115,8 @@ button {
 	cursor: default;
 }
 .help:hover {
-	background-color: #0093ff;
+	background-color: rgba(77, 219, 255, 1);
+	color: black;
 	transition: all 0.5s;
 }
 .helpimg {
@@ -143,6 +144,8 @@ button {
 	.helpStuff {
 		/* top: 90%; */
 		position: relative;
+		margin-right: 3%;
+		margin-top: 3%;
 	}
 	.help {
 		font-size: 5vw;

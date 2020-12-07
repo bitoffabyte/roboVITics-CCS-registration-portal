@@ -172,7 +172,7 @@ const Register = () => {
 							autoComplete='off'
 							type='tel'
 							className={`${phck ? "input1" : "input1 er"}`}
-							placeholder='Phone Number'
+							placeholder='Valid 10 digit number'
 							ref={phno}
 							name='phone'
 						/>
@@ -196,7 +196,7 @@ const Register = () => {
 							autoComplete='off'
 							type='text'
 							className={`${rgck ? "input1" : "input1 er"}`}
-							placeholder='Registration Number'
+							placeholder='Ex:-20BCE0000'
 							ref={reg}
 							name='regno'
 							// style={{ textTransform: "uppercase" }}

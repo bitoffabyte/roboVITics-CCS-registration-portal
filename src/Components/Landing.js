@@ -69,7 +69,9 @@ const Landing = () => {
 				<span className='lccs'>Core Committee Selection 2020</span>
 			</div>
 			<div className='helpStuff'>
-				<span className='help'>Help?</span>
+				<span className='help'>
+					<u>Help?</u>
+				</span>
 				<br></br>
 				<img src={help} className='helpimg' />
 			</div>

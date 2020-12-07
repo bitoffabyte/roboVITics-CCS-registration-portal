@@ -151,6 +151,10 @@ form {
 .right {
 	text-align: right;
 }
+.formLabel:after {
+	content: " *";
+	color: red;
+}
 .labb h1,
 h2 {
 	display: none;
