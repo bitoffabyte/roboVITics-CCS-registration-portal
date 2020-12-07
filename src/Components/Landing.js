@@ -14,7 +14,7 @@ const Landing = () => {
 	const history = useHistory();
 	const [width, setWidth] = useState(window.innerWidth);
 	const [auth, updateAuth] = useState(false);
-
+	const [helpp, updateHelp] = useState(false);
 	const logo = useRef(svg);
 	const handleResize = () => setWidth(window.innerWidth);
 	if (width < 801) {
@@ -69,11 +69,21 @@ const Landing = () => {
 				<span className='lccs'>Core Committee Selection 2020</span>
 			</div>
 			<div className='helpStuff'>
-				<span className='help'>
-					<u>Help?</u>
+				<span
+					className='help'
+					onClick={() => updateHelp((prev) => !prev)}
+				>
+					Help?
 				</span>
 				<br></br>
-				<img src={help} className='helpimg' />
+				<img
+					src={help}
+					className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+				/>
+				<div
+					className={`${helpp ? "backdrop" : ""}`}
+					onClick={() => updateHelp(false)}
+				></div>
 			</div>
 		</div>
 	);

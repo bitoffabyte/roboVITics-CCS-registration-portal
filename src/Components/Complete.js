@@ -12,6 +12,7 @@ const Landing = () => {
 	if (width < 801) {
 		logo.current = svg2;
 	} else logo.current = svg;
+	const [helpp, updateHelp] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
@@ -49,7 +50,14 @@ const Landing = () => {
 				<div className='helpStuff eewq'>
 					<span className='help'>Help?</span>
 					<br></br>
-					<img src={help} className='helpimg qqq' />
+					<img
+						src={help}
+						className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+					/>
+					<div
+						className={`${helpp ? "backdrop" : ""}`}
+						onClick={() => updateHelp(false)}
+					></div>
 				</div>
 			</div>
 		</div>

@@ -98,6 +98,27 @@ form {
 .input3:focus {
 	border-color: #0093ff;
 }
+.input3::-webkit-scrollbar {
+	width: 10px;
+	width: 4px;
+}
+
+/* Track */
+.input3::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Handle */
+.input3::-webkit-scrollbar-thumb {
+	background: #c4c4c4;
+	height: 180px;
+	border-radius: 32px;
+}
+
+/* Handle on hover */
+.input3::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 .submitBtn {
 	width: 5vw;
 	cursor: pointer;

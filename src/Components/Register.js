@@ -22,6 +22,8 @@ const Register = () => {
 	const [rgck, updatergck] = useState(true);
 	const [reck, updatereck] = useState(true);
 	const [suc, updateSuc] = useState(false);
+	const [helpp, updateHelp] = useState(false);
+
 	let mail = "";
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
@@ -126,6 +128,7 @@ const Register = () => {
 				<h1>Register</h1>
 
 				<div className='labb'>
+					const [helpp, updateHelp] = useState(false);
 					<h1 className='labbh1'>Register</h1>
 					<h2>Fill the details carefully</h2>
 					<br />
@@ -250,7 +253,14 @@ const Register = () => {
 				<div className='helpStuff'>
 					<span className='help'>Help?</span>
 					<br></br>
-					<img src={help} className='helpimg' alt='help' />
+					<img
+						src={help}
+						className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+					/>
+					<div
+						className={`${helpp ? "backdrop" : ""}`}
+						onClick={() => updateHelp(false)}
+					></div>
 				</div>
 			</div>
 		</div>

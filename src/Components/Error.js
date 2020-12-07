@@ -14,6 +14,7 @@ const Error = ({ a, b }) => {
 	if (width < 801) {
 		logo.current = svg2;
 	} else logo.current = svg;
+	const [helpp, updateHelp] = useState(false);
 
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
@@ -49,7 +50,14 @@ const Error = ({ a, b }) => {
 				<div className='helpStuff'>
 					<span className='help'>Help?</span>
 					<br></br>
-					<img src={help} className='helpimg' />
+					<img
+						src={help}
+						className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+					/>
+					<div
+						className={`${helpp ? "backdrop" : ""}`}
+						onClick={() => updateHelp(false)}
+					></div>
 				</div>
 			</div>
 		</div>
