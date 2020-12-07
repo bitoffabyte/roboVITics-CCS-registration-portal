@@ -223,7 +223,7 @@ const Register = () => {
 						<textarea
 							type='text'
 							className={`${reck ? "input3" : "input3 er"}`}
-							placeholder='Answer in 100-200 words'
+							placeholder='Answer in 50-200 words'
 							ref={rea}
 							name='reason'
 						/>
