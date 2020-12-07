@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/roboVITics-CCS-React-2.0/static/css/main.16db4a3b.chunk.css",
+    "main.css": "/roboVITics-CCS-React-2.0/static/css/main.327aede7.chunk.css",
     "main.js": "/roboVITics-CCS-React-2.0/static/js/main.cc3142cf.chunk.js",
     "main.js.map": "/roboVITics-CCS-React-2.0/static/js/main.cc3142cf.chunk.js.map",
     "runtime-main.js": "/roboVITics-CCS-React-2.0/static/js/runtime-main.e6b8e716.js",
@@ -8,7 +8,7 @@
     "static/js/2.f4d6d979.chunk.js": "/roboVITics-CCS-React-2.0/static/js/2.f4d6d979.chunk.js",
     "static/js/2.f4d6d979.chunk.js.map": "/roboVITics-CCS-React-2.0/static/js/2.f4d6d979.chunk.js.map",
     "index.html": "/roboVITics-CCS-React-2.0/index.html",
-    "static/css/main.16db4a3b.chunk.css.map": "/roboVITics-CCS-React-2.0/static/css/main.16db4a3b.chunk.css.map",
+    "static/css/main.327aede7.chunk.css.map": "/roboVITics-CCS-React-2.0/static/css/main.327aede7.chunk.css.map",
     "static/js/2.f4d6d979.chunk.js.LICENSE.txt": "/roboVITics-CCS-React-2.0/static/js/2.f4d6d979.chunk.js.LICENSE.txt",
     "static/media/Help.3ccee77c.svg": "/roboVITics-CCS-React-2.0/static/media/Help.3ccee77c.svg",
     "static/media/exclamation.1d78da44.svg": "/roboVITics-CCS-React-2.0/static/media/exclamation.1d78da44.svg",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.e6b8e716.js",
     "static/js/2.f4d6d979.chunk.js",
-    "static/css/main.16db4a3b.chunk.css",
+    "static/css/main.327aede7.chunk.css",
     "static/js/main.cc3142cf.chunk.js"
   ]
 }
