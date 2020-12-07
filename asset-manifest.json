@@ -1,24 +1,28 @@
 {
   "files": {
-    "main.css": "/roboVITics-CCS-React-2.0/static/css/main.e0b81906.chunk.css",
-    "main.js": "/roboVITics-CCS-React-2.0/static/js/main.77f2d70f.chunk.js",
-    "main.js.map": "/roboVITics-CCS-React-2.0/static/js/main.77f2d70f.chunk.js.map",
+    "main.css": "/roboVITics-CCS-React-2.0/static/css/main.3e1fa000.chunk.css",
+    "main.js": "/roboVITics-CCS-React-2.0/static/js/main.0b50b5eb.chunk.js",
+    "main.js.map": "/roboVITics-CCS-React-2.0/static/js/main.0b50b5eb.chunk.js.map",
     "runtime-main.js": "/roboVITics-CCS-React-2.0/static/js/runtime-main.4532e2bf.js",
     "runtime-main.js.map": "/roboVITics-CCS-React-2.0/static/js/runtime-main.4532e2bf.js.map",
-    "static/js/2.17a15db1.chunk.js": "/roboVITics-CCS-React-2.0/static/js/2.17a15db1.chunk.js",
-    "static/js/2.17a15db1.chunk.js.map": "/roboVITics-CCS-React-2.0/static/js/2.17a15db1.chunk.js.map",
+    "static/js/2.a6f9667c.chunk.js": "/roboVITics-CCS-React-2.0/static/js/2.a6f9667c.chunk.js",
+    "static/js/2.a6f9667c.chunk.js.map": "/roboVITics-CCS-React-2.0/static/js/2.a6f9667c.chunk.js.map",
     "index.html": "/roboVITics-CCS-React-2.0/index.html",
-    "static/css/main.e0b81906.chunk.css.map": "/roboVITics-CCS-React-2.0/static/css/main.e0b81906.chunk.css.map",
-    "static/js/2.17a15db1.chunk.js.LICENSE.txt": "/roboVITics-CCS-React-2.0/static/js/2.17a15db1.chunk.js.LICENSE.txt",
-    "static/media/google.cfd2f0d8.svg": "/roboVITics-CCS-React-2.0/static/media/google.cfd2f0d8.svg",
+    "static/css/main.3e1fa000.chunk.css.map": "/roboVITics-CCS-React-2.0/static/css/main.3e1fa000.chunk.css.map",
+    "static/js/2.a6f9667c.chunk.js.LICENSE.txt": "/roboVITics-CCS-React-2.0/static/js/2.a6f9667c.chunk.js.LICENSE.txt",
+    "static/media/Help.3ccee77c.svg": "/roboVITics-CCS-React-2.0/static/media/Help.3ccee77c.svg",
+    "static/media/exclamation.1d78da44.svg": "/roboVITics-CCS-React-2.0/static/media/exclamation.1d78da44.svg",
     "static/media/landingPhoto.52d42d9f.svg": "/roboVITics-CCS-React-2.0/static/media/landingPhoto.52d42d9f.svg",
     "static/media/landingPhoto2.4cdacc2f.svg": "/roboVITics-CCS-React-2.0/static/media/landingPhoto2.4cdacc2f.svg",
-    "static/media/robovitics.9d028bdc.png": "/roboVITics-CCS-React-2.0/static/media/robovitics.9d028bdc.png"
+    "static/media/robovitics.9d028bdc.png": "/roboVITics-CCS-React-2.0/static/media/robovitics.9d028bdc.png",
+    "static/media/signin.34e2d217.svg": "/roboVITics-CCS-React-2.0/static/media/signin.34e2d217.svg",
+    "static/media/submit.2aec8657.svg": "/roboVITics-CCS-React-2.0/static/media/submit.2aec8657.svg",
+    "static/media/tick.1db0d938.svg": "/roboVITics-CCS-React-2.0/static/media/tick.1db0d938.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4532e2bf.js",
-    "static/js/2.17a15db1.chunk.js",
-    "static/css/main.e0b81906.chunk.css",
-    "static/js/main.77f2d70f.chunk.js"
+    "static/js/2.a6f9667c.chunk.js",
+    "static/css/main.3e1fa000.chunk.css",
+    "static/js/main.0b50b5eb.chunk.js"
   ]
 }
