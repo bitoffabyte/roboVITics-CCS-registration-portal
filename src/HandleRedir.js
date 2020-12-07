@@ -1,5 +1,3 @@
-import firebase from "firebase";
-import { useHistory } from "react-router-dom";
 export const Redir = (email) => {
 	// const history = useHistory();
 	//console.log(email);

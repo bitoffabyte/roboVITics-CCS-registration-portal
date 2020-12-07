@@ -199,7 +199,7 @@ const Register = () => {
 							placeholder='Registration Number'
 							ref={reg}
 							name='regno'
-							style={{ textTransform: "uppercase" }}
+							// style={{ textTransform: "uppercase" }}
 						/>
 
 						<br />
