@@ -1,38 +1,30 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Route, HashRouter, Switch } from "react-router-dom";
-import firebase from "firebase";
-import { initialize, signIn } from "./firebase-codes";
+import { initialize } from "./firebase-codes";
 import Landing from "./Components/Landing";
+import Register from "./Components/Register";
+import Error from "./Components/Error";
 initialize();
 function App() {
-	const [auth, updateAuth] = useState(false);
-	useEffect(() => {
-		const uns = firebase.auth().onAuthStateChanged((user) => {
-			updateAuth(!!user);
-		});
-		return () => {
-			uns();
-		};
-	}, []);
 	return (
 		<HashRouter basename='/' className='App'>
 			<Switch>
 				<Route path='/' exact>
-					<Landing signIn={signIn} auth={auth} />
+					<Landing />
 				</Route>
-				{/* <Route path='/register'>
+				<Route path='/register'>
 					<Register />
 				</Route>
 				<Route path='/error'>
 					<Error
-						a='Error'
-						b='Contact Saahil-9898056388 (Check if you have used VIT email ID ending in @vitstudent.ac.in to sign in)'
+						a='Oops :('
+						b='Please check if you have used your VIT email,ending with 2020@vitstudent.ac.in to sign in.'
 					/>
 				</Route>
 				<Route>
-					<Error a='404' b=' Page Not Found'></Error>
-				</Route> */}
+					<Error a='Oops :(' b=' Page Not Found'></Error>
+				</Route>
 			</Switch>
 		</HashRouter>
 	);

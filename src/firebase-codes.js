@@ -18,31 +18,20 @@ export const initialize = () => {
 };
 
 export const signIn = async () => {
-	console.log("oi");
-
 	const provider = new firebase.auth.GoogleAuthProvider();
 	provider.setCustomParameters({
 		prompt: "select_account",
 	});
-	firebase.auth().signOut();
+
+	// firebase.auth().signOut();
 	try {
 		const result = await firebase.auth().signInWithPopup(provider);
-		var user = result.user;
+		// var user = result.user;
 	} catch (error) {
-		console.log(error);
+		//console.log(error);
 		// var errorCode = error.code;
 		// var errorMessage = error.message;
 		// var email = error.email;
 		// var credential = error.credential;
-	}
-};
-export const email = async () => {
-	try {
-		const mail = await firebase.auth().currentUser.email;
-		if (mail) {
-			return mail;
-		} else return null;
-	} catch (err) {
-		return null;
 	}
 };

@@ -1,7 +1,8 @@
+import firebase from "firebase";
+import { useHistory } from "react-router-dom";
 export const Redir = (email) => {
 	// const history = useHistory();
-	console.log("oioi");
-	//console.log(firebase.auth().currentUser.email);
+	//console.log(email);
 	if (
 		(email.includes("2019") && email.includes("vitstudent.ac.in")) ||
 		(email.includes("2018") && email.includes("vitstudent.ac.in")) ||
@@ -9,6 +10,12 @@ export const Redir = (email) => {
 	) {
 		return true;
 	} else {
+		//console.log("asdasdpp");
+		// history.push("/error");
+		// delete();
+		// firebase.auth().sha;
+
+		// firebase.auth().signOut();
 		return false;
 	}
 };

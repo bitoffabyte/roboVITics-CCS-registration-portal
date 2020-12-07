@@ -1,18 +1,20 @@
 import { useEffect, useState, useRef } from "react";
 import "./Styles/Landing.css";
-import { Redir } from "../handleRedir";
 import { useHistory } from "react-router-dom";
-import firebase from "firebase";
 import img from "../assets/robovitics.png";
-import googleImg from "../assets/google.svg";
+import google from "../assets/signin.svg";
 import svg from "../assets/landingPhoto.svg";
 import svg2 from "../assets/landingPhoto2.svg";
-const Landing = ({ signIn, auth }) => {
+import help from "../assets/Help.svg";
+import firebase from "firebase";
+import { signIn } from "../firebase-codes";
+import { Redir } from "../HandleRedir";
+
+const Landing = () => {
 	const history = useHistory();
-	// useEffect()
-	// const size = useWindowSize();
-	console.log(signIn);
 	const [width, setWidth] = useState(window.innerWidth);
+	const [auth, updateAuth] = useState(false);
+
 	const logo = useRef(svg);
 	const handleResize = () => setWidth(window.innerWidth);
 	if (width < 801) {
@@ -22,32 +24,36 @@ const Landing = ({ signIn, auth }) => {
 	useEffect(() => {
 		firebase.auth().signOut();
 
+		const uns = firebase.auth().onAuthStateChanged((user) => {
+			updateAuth(!!user);
+			// console.log(user, "asd");
+
+			if (user) {
+				if (history.location.pathname == "/") {
+					if (Redir(user.email)) history.push("/register");
+					else {
+						// firebase.auth().signOut();
+						history.push("/error");
+					}
+				}
+			}
+		});
 		const handleResize = () => setWidth(window.innerWidth);
 		window.addEventListener("resize", handleResize);
-		if (auth) {
-			if (Redir(firebase.auth().currentUser.email)) {
-				history.push("/register");
-			} else {
-				firebase.auth().signOut();
-				history.push("/error");
-			}
-		}
 		return () => {
+			uns();
 			window.removeEventListener("resize", handleResize);
 		};
-	});
+	}, []);
 	return (
-		<div className='landing'>
+		<div className='landing' style={{ overflow: "auto" }}>
 			<div className='left'>
 				<div className='lab'>
 					<img src={img} className='roboLogo' />
 					<br />
 					<br />
 					<br />
-					<button className='signinBtn' onClick={signIn}>
-						<span>Sign in with Google</span>
-						<img src={googleImg} className='googleImg' />
-					</button>
+					<img src={google} className='signinbtn' onClick={signIn} />
 					<br />
 					<span className='vitE'>
 						Please sign in with VIT e-mail ID
@@ -56,11 +62,16 @@ const Landing = ({ signIn, auth }) => {
 			</div>
 			<div className='right'>
 				<div className='rab'>
-					<img src={logo.current} className='foto' />
+					<img src={logo.current} className='foto fotoo' />
 				</div>
 				{/* <img src={logo.current} className='foto' /> */}
 
-				<span className='ccs'>Core Committee Selection 2020</span>
+				<span className='lccs'>Core Committee Selection 2020</span>
+			</div>
+			<div className='helpStuff'>
+				<span className='help'>Help?</span>
+				<br></br>
+				<img src={help} className='helpimg' />
 			</div>
 		</div>
 	);
