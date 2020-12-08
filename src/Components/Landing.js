@@ -10,11 +10,13 @@ import firebase from "firebase";
 import { signIn } from "../firebase-codes";
 import { Redir } from "../HandleRedir";
 
-const Landing = () => {
+const Landing = ({ updateMail }) => {
 	const history = useHistory();
 	const [width, setWidth] = useState(window.innerWidth);
 	const [auth, updateAuth] = useState(false);
 	const [helpp, updateHelp] = useState(false);
+	// const [mail, updateMail] = useState("");
+
 	const logo = useRef(svg);
 	const handleResize = () => setWidth(window.innerWidth);
 	if (width < 801) {
@@ -29,9 +31,13 @@ const Landing = () => {
 			// console.log(user, "asd");
 
 			if (user) {
+				updateMail(user.email);
+
 				if (history.location.pathname == "/") {
-					if (Redir(user.email)) history.push("/register");
-					else {
+					if (Redir(user.email)) {
+						history.push("/register");
+						// console
+					} else {
 						// firebase.auth().signOut();
 						history.push("/error");
 					}

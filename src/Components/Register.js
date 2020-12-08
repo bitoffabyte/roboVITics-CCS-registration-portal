@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 import Complete from "./Complete";
 import "./Styles/Register.css";
 import { chkUser } from "./Checks";
-const Register = () => {
+const Register = ({ mail, updateMail }) => {
 	const [width, setWidth] = useState(window.innerWidth);
 	const logo = useRef(svg);
 	const phno = useRef();
@@ -23,17 +23,18 @@ const Register = () => {
 	const [reck, updatereck] = useState(true);
 	const [suc, updateSuc] = useState(false);
 	const [helpp, updateHelp] = useState(false);
-	const [mail, updateMail] = useState("");
+	console.log(mail);
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
 		window.addEventListener("resize", handleResize);
 		const uns = firebase.auth().onAuthStateChanged(async (user) => {
 			// console.log(user, "user");
 			// if user
-			updateMail(user.email);
 			if (!user) {
 				history.push("/");
 			} else {
+				updateMail(user.email);
+
 				try {
 					//  = user.email;
 					const asd = await chkUser(user.email, updateSuc);
@@ -104,7 +105,7 @@ const Register = () => {
 				regno,
 				reason,
 			};
-			// console.log(det);
+			console.log(det);
 			$.post(
 				"https://ccs-robovitics.herokuapp.com/register",
 				det,
@@ -257,7 +258,12 @@ const Register = () => {
 
 				<h1 className='ccs'>Fill the details carefully</h1>
 				<div className='helpStuff'>
-					<span className='help'>Help?</span>
+					<span
+						className='help'
+						onClick={() => updateHelp((prev) => !prev)}
+					>
+						Help?
+					</span>
 					<br></br>
 					<img
 						src={help}

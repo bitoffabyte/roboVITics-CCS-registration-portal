@@ -7,14 +7,15 @@ import Register from "./Components/Register";
 import Error from "./Components/Error";
 initialize();
 function App() {
+	const [mail, updateMail] = useState("");
 	return (
 		<HashRouter basename='/' className='App'>
 			<Switch>
 				<Route path='/' exact>
-					<Landing />
+					<Landing updateMail={updateMail} />
 				</Route>
 				<Route path='/register'>
-					<Register />
+					<Register mail={mail} updateMail={updateMail} />
 				</Route>
 				<Route path='/error'>
 					<Error
