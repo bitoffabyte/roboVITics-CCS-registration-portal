@@ -23,18 +23,19 @@ const Register = () => {
 	const [reck, updatereck] = useState(true);
 	const [suc, updateSuc] = useState(false);
 	const [helpp, updateHelp] = useState(false);
-
-	let mail = "";
+	const [mail, updateMail] = useState("");
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
 		window.addEventListener("resize", handleResize);
 		const uns = firebase.auth().onAuthStateChanged(async (user) => {
 			console.log(user, "user");
+			// if user
+			updateMail(user.email);
 			if (!user) {
 				history.push("/");
 			} else {
-				mail = user.email;
 				try {
+					//  = user.email;
 					const asd = await chkUser(user.email, updateSuc);
 					// if (asd) {
 					// 	updateSuc(true);
