@@ -77,7 +77,8 @@ const Register = ({ mail, updateMail }) => {
 		}
 		if (
 			rea.current.value.split(" ").length < 50 ||
-			rea.current.value.split(" ").length > 200
+			rea.current.value.split(" ").length > 200 ||
+			rea.current.value.length > 2000
 		) {
 			updatereck(false);
 		} else {
