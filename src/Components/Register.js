@@ -110,7 +110,9 @@ const Register = ({ mail, updateMail }) => {
 				"https://ccs-robovitics.herokuapp.com/register",
 				det,
 				(data, err) => {
-					// console.log(data);
+					console.log(data, "data");
+					console.log(err, "err");
+
 					updateSuc(true);
 				}
 			);
