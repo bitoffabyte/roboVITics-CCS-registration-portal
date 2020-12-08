@@ -17,7 +17,7 @@
 	width: 100%;
 }
 .rc {
-	font-size: 5vw;
+	font-size: 4.4vw;
 	line-height: 5vw;
 }
 
@@ -40,7 +40,7 @@
 	text-align: center;
 	/* margin-top: 10%; */
 	position: absolute;
-	bottom: 18%;
+	bottom: 10%;
 }
 .lav {
 	position: relative;

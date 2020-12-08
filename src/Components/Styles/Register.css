@@ -165,7 +165,7 @@ form {
 	text-align: right;
 	/* margin-top: 10%; */
 	position: absolute;
-	bottom: 18%;
+	bottom: 10%;
 	/* float: right; */
 	width: 40%;
 }
@@ -179,6 +179,10 @@ form {
 .labb h1,
 h2 {
 	display: none;
+}
+.Rleft h1 {
+	text-align: left;
+	transform: translateX(18%);
 }
 @media only screen and (max-width: 801px) {
 	.Rleft h1 {
