@@ -139,7 +139,9 @@ const Register = () => {
 							{!nameck ? (
 								<>
 									<br />
+									<br />
 									Enter Your Full Name
+									{/* <br /> */}
 								</>
 							) : (
 								""
@@ -164,6 +166,7 @@ const Register = () => {
 								<>
 									<br />
 									Enter a valid Phone Number
+									{/* <br /> */}
 								</>
 							) : (
 								""
@@ -189,6 +192,7 @@ const Register = () => {
 								<>
 									<br />
 									Enter a valid Registration Number
+									{/* <br /> */}
 								</>
 							) : (
 								""
@@ -217,6 +221,7 @@ const Register = () => {
 								<>
 									<br />
 									Please keep it 50 - 200 words
+									{/* <br /> */}
 								</>
 							) : (
 								""
