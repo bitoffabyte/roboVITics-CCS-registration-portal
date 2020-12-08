@@ -28,7 +28,7 @@ const Register = () => {
 		const handleResize = () => setWidth(window.innerWidth);
 		window.addEventListener("resize", handleResize);
 		const uns = firebase.auth().onAuthStateChanged(async (user) => {
-			console.log(user, "user");
+			// console.log(user, "user");
 			// if user
 			updateMail(user.email);
 			if (!user) {
@@ -104,12 +104,12 @@ const Register = () => {
 				regno,
 				reason,
 			};
-			console.log(det);
+			// console.log(det);
 			$.post(
 				"https://ccs-robovitics.herokuapp.com/register",
 				det,
 				(data, err) => {
-					console.log(data);
+					// console.log(data);
 					updateSuc(true);
 				}
 			);
