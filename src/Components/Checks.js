@@ -8,7 +8,7 @@ export const chkUser = async (email, updateSuc) => {
 
 	$.ajax({
 		type: "POST",
-		url: "https://ccs-robovitics.herokuapp.com/exists",
+		url: "https://beepboop.robovitics.in/exists",
 		data: det,
 		success: async (data) => {
 			// console.log(JSON.parse(data));

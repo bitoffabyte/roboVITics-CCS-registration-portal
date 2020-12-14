@@ -108,7 +108,7 @@ const Register = ({ mail, updateMail }) => {
 			};
 			console.log(det);
 			$.post(
-				"https://ccs-robovitics.herokuapp.com/register",
+				"https://beepboop.robovitics.in/register",
 				det,
 				(data, err) => {
 					console.log(data, "data");
@@ -217,7 +217,7 @@ const Register = ({ mail, updateMail }) => {
 						<br />
 						<br />
 						<label className='formLabel'>
-							Why do you want to join RoboVITics?
+							Does robotics pique the curiosity vein of yours? What kind of impact does robotics have on your day to day life? 
 						</label>
 						<br />
 
