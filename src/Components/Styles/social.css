@@ -1,0 +1,26 @@
+.sm {
+	display: inline-block;
+	position: fixed;
+	width: 20%;
+	top: 93%;
+	left: 2%;
+	/* position: relative; */
+	z-index: 1000;
+}
+.sm-img {
+	width: 15%;
+	display: inline;
+}
+@media only screen and (max-width: 801px) {
+	.sm {
+		display: inline-block;
+		align-self: left;
+		float: left;
+		position: relative;
+		/* width: 80%; */
+		width: 50%;
+	}
+	.sm-img {
+		width: 8vw;
+	}
+}

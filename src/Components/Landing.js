@@ -1,15 +1,15 @@
-import { useEffect, useState, useRef } from "react";
-import "./Styles/Landing.css";
-import { useHistory } from "react-router-dom";
-import img from "../assets/robovitics.png";
-import google from "../assets/signin.svg";
-import svg from "../assets/landingPhoto.svg";
-import svg2 from "../assets/landingPhoto2.svg";
-import help from "../assets/Help.svg";
-import firebase from "firebase";
-import { signIn } from "../firebase-codes";
-import { Redir } from "../HandleRedir";
-
+import { useEffect, useState, useRef } from 'react';
+import './Styles/Landing.css';
+import { useHistory } from 'react-router-dom';
+import img from '../assets/robovitics.png';
+import google from '../assets/signin.svg';
+import svg from '../assets/landingPhoto.svg';
+import svg2 from '../assets/landingPhoto2.svg';
+import help from '../assets/Help.svg';
+import firebase from 'firebase';
+import { signIn } from '../firebase-codes';
+import { Redir } from '../HandleRedir';
+import Socialmedia from './Socialmedia';
 const Landing = ({ updateMail }) => {
 	const history = useHistory();
 	const [width, setWidth] = useState(window.innerWidth);
@@ -33,26 +33,26 @@ const Landing = ({ updateMail }) => {
 			if (user) {
 				updateMail(user.email);
 
-				if (history.location.pathname == "/") {
+				if (history.location.pathname == '/') {
 					if (Redir(user.email)) {
-						history.push("/register");
+						history.push('/register');
 						// console
 					} else {
 						// firebase.auth().signOut();
-						history.push("/error");
+						history.push('/error');
 					}
 				}
 			}
 		});
 		const handleResize = () => setWidth(window.innerWidth);
-		window.addEventListener("resize", handleResize);
+		window.addEventListener('resize', handleResize);
 		return () => {
 			uns();
-			window.removeEventListener("resize", handleResize);
+			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
 	return (
-		<div className='landing' style={{ overflow: "auto" }}>
+		<div className='landing' style={{ overflow: 'auto' }}>
 			<div className='left'>
 				<div className='lab'>
 					<img src={img} className='roboLogo' />
@@ -75,6 +75,8 @@ const Landing = ({ updateMail }) => {
 				<span className='lccs'>Core Committee Selection 2020</span>
 			</div>
 			<div className='helpStuff'>
+				<Socialmedia />
+
 				<span
 					className='help'
 					onClick={() => updateHelp((prev) => !prev)}
@@ -84,10 +86,10 @@ const Landing = ({ updateMail }) => {
 				<br></br>
 				<img
 					src={help}
-					className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+					className={`${!helpp ? 'helpimg' : 'helpimg hell'}`}
 				/>
 				<div
-					className={`${helpp ? "backdrop" : ""}`}
+					className={`${helpp ? 'backdrop' : ''}`}
 					onClick={() => updateHelp(false)}
 				></div>
 			</div>

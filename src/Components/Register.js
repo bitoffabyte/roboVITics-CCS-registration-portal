@@ -10,6 +10,8 @@ import Complete from './Complete';
 import './Styles/Register.css';
 import jwt from 'jsonwebtoken';
 import { chkUser } from './Checks';
+import Socialmedia from './Socialmedia';
+
 const Register = ({ mail, updateMail }) => {
 	const [width, setWidth] = useState(window.innerWidth);
 	const logo = useRef(svg);
@@ -259,6 +261,7 @@ const Register = ({ mail, updateMail }) => {
 
 				<h1 className='ccs'>Fill the details carefully</h1>
 				<div className='helpStuff'>
+					<Socialmedia />
 					<span
 						className='help'
 						onClick={() => updateHelp((prev) => !prev)}

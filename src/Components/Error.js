@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from "react";
-import img from "../assets/exclamation.svg";
-import svg from "../assets/landingPhoto.svg";
-import svg2 from "../assets/landingPhoto2.svg";
-import help from "../assets/Help.svg";
+import { useState, useEffect, useRef } from 'react';
+import img from '../assets/exclamation.svg';
+import svg from '../assets/landingPhoto.svg';
+import svg2 from '../assets/landingPhoto2.svg';
+import help from '../assets/Help.svg';
+import Socialmedia from './Socialmedia';
 
-import "./Styles/Error.css";
+import './Styles/Error.css';
 const Error = ({ a, b }) => {
 	// useEffect()
 	// const size = useWindowSize();
@@ -18,10 +19,10 @@ const Error = ({ a, b }) => {
 
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
-		window.addEventListener("resize", handleResize);
+		window.addEventListener('resize', handleResize);
 
 		return () => {
-			window.removeEventListener("resize", handleResize);
+			window.removeEventListener('resize', handleResize);
 		};
 	});
 	return (
@@ -48,14 +49,15 @@ const Error = ({ a, b }) => {
 
 				<span className='lccs'>Core Committee Selection 2020</span>
 				<div className='helpStuff'>
+					<Socialmedia />
 					<span className='help'>Help?</span>
 					<br></br>
 					<img
 						src={help}
-						className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+						className={`${!helpp ? 'helpimg' : 'helpimg hell'}`}
 					/>
 					<div
-						className={`${helpp ? "backdrop" : ""}`}
+						className={`${helpp ? 'backdrop' : ''}`}
 						onClick={() => updateHelp(false)}
 					></div>
 				</div>
