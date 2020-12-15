@@ -101,11 +101,11 @@ const Register = ({ mail, updateMail }) => {
 			};
 			console.log(det);
 			try {
-				const token = await jwt.sign(det, 'password-very-secure');
-				console.log(token);
+				// const token = await jwt.sign(det, 'password-very-secure');
+				// console.log(token);
 				$.post(
 					'https://beepboop.robovitics.in/register',
-					token,
+					det,
 					(data, err) => {
 						console.log(data, 'data');
 						console.log(err, 'err');

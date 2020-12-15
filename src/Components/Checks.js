@@ -8,12 +8,12 @@ export const chkUser = async (email, updateSuc) => {
 	};
 	let asd = false;
 	try {
-		const token = await jwt.sign(det, 'password-very-secure');
+		// const token = await jwt.sign(det, 'password-very-secure');
 		// console.log(token);
 		$.ajax({
 			type: 'POST',
 			url: 'https://beepboop.robovitics.in/exists',
-			data: token,
+			data: det,
 			success: async (data) => {
 				// console.log(JSON.parse(data));
 				if (data) {
