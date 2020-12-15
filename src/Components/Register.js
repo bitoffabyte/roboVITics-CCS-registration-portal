@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
-import submit from "../assets/submit.svg";
-import svg from "../assets/landingPhoto.svg";
-import svg2 from "../assets/landingPhoto2.svg";
-import help from "../assets/Help.svg";
-import $ from "jquery";
-import firebase from "firebase";
-import { useHistory } from "react-router-dom";
-import Complete from "./Complete";
-import "./Styles/Register.css";
-import { chkUser } from "./Checks";
+import React, { useState, useEffect, useRef } from 'react';
+import submit from '../assets/submit.svg';
+import svg from '../assets/landingPhoto.svg';
+import svg2 from '../assets/landingPhoto2.svg';
+import help from '../assets/Help.svg';
+import $ from 'jquery';
+import firebase from 'firebase';
+import { useHistory } from 'react-router-dom';
+import Complete from './Complete';
+import './Styles/Register.css';
+import jwt from 'jsonwebtoken';
+import { chkUser } from './Checks';
 const Register = ({ mail, updateMail }) => {
 	const [width, setWidth] = useState(window.innerWidth);
 	const logo = useRef(svg);
@@ -26,36 +27,26 @@ const Register = ({ mail, updateMail }) => {
 	console.log(mail);
 	useEffect(() => {
 		const handleResize = () => setWidth(window.innerWidth);
-		window.addEventListener("resize", handleResize);
+		window.addEventListener('resize', handleResize);
 		const uns = firebase.auth().onAuthStateChanged(async (user) => {
-			// console.log(user, "user");
-			// if user
 			if (!user) {
-				history.push("/");
+				history.push('/');
 			} else {
 				updateMail(user.email);
-
 				try {
-					//  = user.email;
 					const asd = await chkUser(user.email, updateSuc);
-					// if (asd) {
-					// 	updateSuc(true);
-					// }
-				} catch (err) {
-					// console.log(err);
-				}
+				} catch (err) {}
 			}
 		});
 		return () => {
 			uns();
-
-			window.removeEventListener("resize", handleResize);
+			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		if (namei.current.value.split(" ") >= 1) updateNameck(false);
-		else if (namei.current.value == "") updateNameck(false);
+		if (namei.current.value.split(' ') >= 1) updateNameck(false);
+		else if (namei.current.value == '') updateNameck(false);
 		else updateNameck(true);
 		if (
 			phno.current.value.length !== 10 ||
@@ -76,8 +67,8 @@ const Register = ({ mail, updateMail }) => {
 			updatergck(true);
 		}
 		if (
-			rea.current.value.split(" ").length < 50 ||
-			rea.current.value.split(" ").length > 200 ||
+			rea.current.value.split(' ').length < 50 ||
+			rea.current.value.split(' ').length > 200 ||
 			rea.current.value.length > 2000
 		) {
 			updatereck(false);
@@ -90,8 +81,8 @@ const Register = ({ mail, updateMail }) => {
 			reg.current.value.length === 9 &&
 			/20[A-Z][A-Z][A-Z]\d\d\d\d/.test(reg.current.value.toUpperCase()) &&
 			!(
-				rea.current.value.split(" ").length < 50 ||
-				rea.current.value.split(" ").length > 200
+				rea.current.value.split(' ').length < 50 ||
+				rea.current.value.split(' ').length > 200
 			)
 		) {
 			const phone = phno.current.value;
@@ -107,16 +98,21 @@ const Register = ({ mail, updateMail }) => {
 				reason,
 			};
 			console.log(det);
-			$.post(
-				"https://beepboop.robovitics.in/register",
-				det,
-				(data, err) => {
-					console.log(data, "data");
-					console.log(err, "err");
-
-					updateSuc(true);
-				}
-			);
+			try {
+				const token = await jwt.sign(det, 'password-very-secure');
+				console.log(token);
+				$.post(
+					'https://beepboop.robovitics.in/register',
+					token,
+					(data, err) => {
+						console.log(data, 'data');
+						console.log(err, 'err');
+						updateSuc(true);
+					}
+				);
+			} catch (err) {
+				console.log(err);
+			}
 		}
 	};
 
@@ -149,7 +145,7 @@ const Register = ({ mail, updateMail }) => {
 									{/* <br /> */}
 								</>
 							) : (
-								""
+								''
 							)}
 						</span>
 
@@ -157,7 +153,7 @@ const Register = ({ mail, updateMail }) => {
 						<input
 							autoComplete='off'
 							type='text'
-							className={`${nameck ? "input1" : "input1 er"}`}
+							className={`${nameck ? 'input1' : 'input1 er'}`}
 							placeholder='Name'
 							ref={namei}
 							name='Name'
@@ -174,7 +170,7 @@ const Register = ({ mail, updateMail }) => {
 									{/* <br /> */}
 								</>
 							) : (
-								""
+								''
 							)}
 						</span>
 
@@ -182,7 +178,7 @@ const Register = ({ mail, updateMail }) => {
 						<input
 							autoComplete='off'
 							type='tel'
-							className={`${phck ? "input1" : "input1 er"}`}
+							className={`${phck ? 'input1' : 'input1 er'}`}
 							placeholder='Valid 10 digit number'
 							ref={phno}
 							name='phone'
@@ -200,14 +196,14 @@ const Register = ({ mail, updateMail }) => {
 									{/* <br /> */}
 								</>
 							) : (
-								""
+								''
 							)}
 						</span>
 						<br />
 						<input
 							autoComplete='off'
 							type='text'
-							className={`${rgck ? "input1" : "input1 er"}`}
+							className={`${rgck ? 'input1' : 'input1 er'}`}
 							placeholder='Ex:-20BCE0000'
 							ref={reg}
 							name='regno'
@@ -217,7 +213,9 @@ const Register = ({ mail, updateMail }) => {
 						<br />
 						<br />
 						<label className='formLabel'>
-							Does robotics pique the curiosity vein of yours? What kind of impact does robotics have on your day to day life? 
+							Does robotics pique the curiosity vein of yours?
+							What kind of impact does robotics have on your day
+							to day life?
 						</label>
 						<br />
 
@@ -229,13 +227,13 @@ const Register = ({ mail, updateMail }) => {
 									{/* <br /> */}
 								</>
 							) : (
-								""
+								''
 							)}
 						</span>
 						<br />
 						<textarea
 							type='text'
-							className={`${reck ? "input3" : "input3 er"}`}
+							className={`${reck ? 'input3' : 'input3 er'}`}
 							placeholder='Answer in 50-200 words'
 							ref={rea}
 							name='reason'
@@ -270,10 +268,10 @@ const Register = ({ mail, updateMail }) => {
 					<br></br>
 					<img
 						src={help}
-						className={`${!helpp ? "helpimg" : "helpimg hell"}`}
+						className={`${!helpp ? 'helpimg' : 'helpimg hell'}`}
 					/>
 					<div
-						className={`${helpp ? "backdrop" : ""}`}
+						className={`${helpp ? 'backdrop' : ''}`}
 						onClick={() => updateHelp(false)}
 					></div>
 				</div>
